@@ -6,5 +6,8 @@ i:
 pc:
 	pre-commit install && pre-commit autoupdate && pre-commit install --hook-type commit-msg
 
+env:
+	cp .env.sample .env
+
 a:
 	poetry run python main.py
