@@ -1,8 +1,7 @@
 from app.settings import (
     RABBITMQ_DEFAULT_HOST,
     RABBITMQ_DEFAULT_USER,
-    RABBITMQ_DEFAULT_PASS,
-    RABBITMQ_SEND_QUEUE,
+    RABBITMQ_DEFAULT_PASS
 )
 from pika import (
     BlockingConnection,
