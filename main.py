@@ -24,7 +24,7 @@ if __name__ == "__main__":
                     pid = get_amazon_id(item.long_url)
                     amazon_pids.append(pid)
 
-                if 'magazineluiza' in item.long_url or 'magazineluiza' in item.long_url:
+                if 'magazineluiza.com' in item.long_url or 'magazinevoce.com' in item.long_url:
                     magalu_urls.append(item.long_url)
         
         if magalu_urls:
