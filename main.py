@@ -2,7 +2,7 @@ from datetime import datetime
 from time import sleep
 from app.pechinchou import PechinchouThief
 from pytz import timezone
-from app.settings import PECHINCHOU_API_HOME
+from app.settings import PECHINCHOU_API_HOME, MAGALU_QUEUE, AMAZON_QUEUE
 from app.helpers import get_amazon_id
 from app.rabbitmq import RabbitMQPublisher
 
@@ -29,12 +29,12 @@ if __name__ == "__main__":
         
         if magalu_urls:
             print('New Magalu Item(s)')
-            publisher = RabbitMQPublisher(queue_name="magalu-items")
-            publisher.publish_pids({ "magalu-items": magalu_urls })
+            publisher = RabbitMQPublisher(queue_name=MAGALU_QUEUE)
+            publisher.publish_pids({ MAGALU_QUEUE: magalu_urls })
         
         if amazon_pids:
             print('New Amazon Item(s)')
-            publisher = RabbitMQPublisher(queue_name="amazon-colly")
-            publisher.publish_pids({ "amazon-colly": amazon_pids })
+            publisher = RabbitMQPublisher(queue_name=AMAZON_QUEUE)
+            publisher.publish_pids({ AMAZON_QUEUE: amazon_pids })
 
         sleep(30)
