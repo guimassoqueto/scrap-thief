@@ -15,7 +15,7 @@ import json
 
 
 class RabbitMQPublisher:
-    def __init__(self, queue_name: str = RABBITMQ_SEND_QUEUE) -> None:
+    def __init__(self, queue_name: str) -> None:
         self.credentials = PlainCredentials(
             RABBITMQ_DEFAULT_USER, RABBITMQ_DEFAULT_PASS
         )
